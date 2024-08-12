@@ -1,6 +1,8 @@
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama.llms import OllamaLLM
 
+## this is a basic example that comes from the documentation for Langchain- Ollama
+### https://python.langchain.com/v0.2/docs/integrations/llms/ollama/
 template = """Question: {question}
 Answer: Let's think step by step.
 """
