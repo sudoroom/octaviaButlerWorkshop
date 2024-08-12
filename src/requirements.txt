@@ -1,3 +1,6 @@
 langchain-ollama
 langchain
-bakllava
+llama-index
+chromadb
+ollama
+ipython
