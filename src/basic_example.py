@@ -6,14 +6,14 @@ Answer: Let's think step by step.
 """
 prompt = ChatPromptTemplate.from_template(template)
 
-model = OllamaLLM(model="llama3.1:latest")
+llm = OllamaLLM(model="llama3.1:latest")
+print(prompt.output_schema)
 
+chain = prompt | llm
 
-chain = prompt | model
+result = chain.invoke({"question": "What is Afro-futurism?"})
 
-result = chain.invoke({"question": "What is LangChain?"})
-
-print(llm.output_schema)
+print(llm.input_schema)
 
 print(result)
 
