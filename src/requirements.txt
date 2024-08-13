@@ -4,3 +4,4 @@ llama-index
 chromadb
 ollama
 ipython
+fastapi
