@@ -11,19 +11,23 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            background-image: url('../images/Butler-Perret_BACK-ofbook-1.jpg'); /* Replace with your actual image URL */
+            background-image: url('/images/Butler-Perret_BACK-ofbook-1.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            min-height: 100vh;
+            padding: 40px;
             box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         h1 {
             font-family: "Abril Fatface", serif;
@@ -33,6 +37,7 @@
             color: #ffffff;
             text-align: center;
             margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         p {
             font-size: 1.2em;
