@@ -1,5 +1,5 @@
 import os
-from langchain.llms import Ollama
+from langchain_community.llms import Ollama
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema import HumanMessage, SystemMessage
 

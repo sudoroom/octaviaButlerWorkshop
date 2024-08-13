@@ -1,25 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #error {
+            color: red;
+            display: none;
+        }
+    </style>
 </head>
-
 <body>
+    <h1>Customer Review</h1>
+    <p>Thanks for shopping with us! Let us know how we did:</p>
+    <label for="review">Your Review:</label><br>
+    <textarea id="review" name="review" rows="4" cols="50"></textarea><br>
+    <button onclick="submitReview()">Submit Review</button>
+    <p id="response"></p>
+    <p id="error"></p>
 
-  <p>Thanks for shopping with us, Let us know how we did! </p>
-  <label for="review">Review</label><br>
-  <input type="text" id="review" name="review"><br>
-  <button onclick="myFunction(document.getElementById('review').value)">Show Answer</button>
-  <p id="deal"></p>
+    <script>
+        function submitReview() {
+            const review = document.getElementById('review').value;
+            const responseElement = document.getElementById('response');
+            const errorElement = document.getElementById('error');
 
-  <script>
-    function myFunction(question) {
-      fetch(`/api/gpt?review=${question}`).then(function (response) {
-        return response.json();
-      }).then(function (data) {
-        document.getElementById("deal").innerHTML = data;
-        console.log(data);
-      }).catch(function (err) {
-        console.log('Fetch Error :-S', err);
-      });
-    }
+            responseElement.innerHTML = 'Processing...';
+            errorElement.style.display = 'none';
 
-  </script>
+            fetch(`/api/gpt?review=${encodeURIComponent(review)}`)
+                .then(response => response.text())
+                .then(data => {
+                    responseElement.innerHTML = data;
+                    console.log(data);
+                })
+                .catch(err => {
+                    console.error('Fetch Error:', err);
+                    errorElement.innerHTML = 'An error occurred. Please try again.';
+                    errorElement.style.display = 'block';
+                    responseElement.innerHTML = '';
+                });
+        }
+    </script>
 </body>
+</html>
