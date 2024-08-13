@@ -13,3 +13,10 @@ List the models you have
 ollama list
 
 ```
+
+## Running the notebook
+
+## Running the web app
+
+at the command line type `uvicorn main:app --reload`
+
