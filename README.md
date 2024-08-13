@@ -2,7 +2,6 @@
 
 The purpose of this [Octavia Butler Open-Source AI meetup](https://sudoroom.org/inspiration-from-goat-octavia-butler/) is to get our hands dirty with code and face-to-face interaction at the SudoRoom hackerspace in Oakland. AI is coming our way for all its good or bad qualities, but we should be proactive and try to figure out way to deal with it humanely.
 
-![image](https://github.com/user-attachments/assets/f6d9169c-537d-45a6-8972-d39f2ebcf725)
 
 ## Install
 
@@ -18,3 +17,5 @@ ollama list
 
 - If you don't have a model download one by doing `ollama pull`
 
+
+![image](https://github.com/user-attachments/assets/f6d9169c-537d-45a6-8972-d39f2ebcf725)
