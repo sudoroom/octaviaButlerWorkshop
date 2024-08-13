@@ -11,6 +11,9 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 async def read_index():
     return FileResponse('static/index.html')
 
+# Mount the images directory
+app.mount("/images", StaticFiles(directory="images"), name="images")
+
 @app.get("/api/gpt")
 async def gpt(review: str):
     return generate_response(review)
