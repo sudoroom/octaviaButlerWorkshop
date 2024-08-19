@@ -1,8 +1,14 @@
-# Octavia Butler Open Source AI Meetup RAG and Vector Databases at SudoRoom hackerspace
+# Octavia Butler Open Source AI Meetup RAG and Vector Databases 
 
+* https://lu.ma/m3qsibqb
 
-We will be getting our hands dirty on open-source generative AI. Along the way we'll be able to learn about RAG and vector databases along with general ai and embeddings, see the pitfalls, and how we can operate in an ethical way.
+We Continue our Open-Source AI workshop from last week with a focus on Vector Databases and RAG with inspiration from Octavia Butler, science fiction goddess.
+
+​We will focus of course on open-sourced models and also see if it’s not too hard to get an open-sourced generative AI model on a raspberry pi for hardware hacking projects.
+
 =======
+
+# about this meetup
 The purpose of this [Octavia Butler Open-Source AI meetup](https://sudoroom.org/inspiration-from-goat-octavia-butler/) is to get our hands dirty with code and face-to-face interaction at the SudoRoom hackerspace in Oakland. AI is coming our way for all its good or bad qualities, but we should be proactive and try to figure out way to deal with it humanely.
 
 
