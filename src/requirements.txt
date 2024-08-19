@@ -6,3 +6,4 @@ langchain-huggingface
 sentence_transformers
 langchain_ollama
 pypdf
+llama-index

@@ -101,7 +101,6 @@ def main():
         memory=memory,
         retriever=vectorstore.as_retriever()
     )
-    
 
     # start a REPL loop
     while True:
