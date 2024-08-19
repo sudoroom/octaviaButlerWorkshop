@@ -7,3 +7,5 @@ sentence_transformers
 langchain_ollama
 pypdf
 llama-index
+llama-index-embeddings-huggingface
+llama-index-llms-ollama
