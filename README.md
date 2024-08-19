@@ -26,6 +26,13 @@ ollama list
 
 ```
 
+## handling the virtual environment
+Don't get your python libraries all dirty! Isolate them in the directory for this project 
+
+```
+python -m venv .venv
+source .venv/bin/activate  # On Windows, use .venv\Scripts\activate
+```
 
 ![image](https://github.com/user-attachments/assets/f6d9169c-537d-45a6-8972-d39f2ebcf725)
 

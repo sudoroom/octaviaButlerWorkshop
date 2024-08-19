@@ -1,8 +1,0 @@
-langchain-ollama
-langchain
-llama-index
-chromadb
-ollama
-ipython
-fastapi
-langchain-community
