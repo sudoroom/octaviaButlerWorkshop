@@ -13,6 +13,7 @@ llm = Ollama(model="llama3.1:latest", request_timeout=120.0)
 Settings.embed_model = HuggingFaceEmbedding(
     model_name="BAAI/bge-small-en-v1.5"
 )
+
 Settings.llm = llm
 documents = [
     Document(text="SudoRoom is a hackerspace in North Oakland."),
