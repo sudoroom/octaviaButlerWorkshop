@@ -39,3 +39,13 @@ print(response3)
 response4 = query_engine.query("What is the BART stations for sudoroom?")
 print(response4)
 
+# start a REPL loop
+while True:
+    user_input = input("Ask a question about the document. Type 'exit' to quit.\n> ")
+    if user_input=="exit":
+        break
+    response_answer = query_engine.query(user_input)
+    print(response_answer)
+    
+
+
