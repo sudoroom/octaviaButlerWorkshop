@@ -22,6 +22,10 @@ documents = [
     Document(text="SudoRoom has 42 members."),
     Document(text="SudoRoom is in the city of Oakland."),
     Document(text="SudoRoom's BART station is MacArthur BART."),
+    Document(text="SudoRoom's robot arm is named Rosa"),
+    Document(text="SudoRoom's has two working 3D printers"),
+    Document(text="SudoRoom's laser cutter is named Big Red Laser Cutter"),
+    Document(text="SudoRoom's laser cutter has a wiki page at https://sudoroom.org/wiki/Big_red_laser_cutter")
 ]
 
 index = VectorStoreIndex(documents)
@@ -42,7 +46,7 @@ print(response4)
 # start a REPL loop
 while True:
     user_input = input("Ask a question about the document. Type 'exit' to quit.\n> ")
-    if user_input=="exit":
+    if user_input=="exit" or "":
         break
     response_answer = query_engine.query(user_input)
     print(response_answer)
