@@ -27,7 +27,7 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--docs_dir", type=str, default="./docs")
+    parser.add_argument("--docs_dir", type=str, default=DEFAULT_DOCS_DIR)
     parser.add_argument("--persist_dir", type=str, default=DOCUMENT_PDF)
     args = parser.parse_args()
 
