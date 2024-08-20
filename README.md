@@ -10,9 +10,8 @@ We Continue our Open-Source AI workshop from last week with a focus on Vector Da
 
 
 
-
-
 ## Basics
+
 We're using open-source models with the Ollama open-source framework
 
 - Download [Ollama](https://www.ollama.com)
