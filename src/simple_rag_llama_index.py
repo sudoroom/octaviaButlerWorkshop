@@ -19,7 +19,7 @@ documents = [
     Document(text="SudoRoom is a hackerspace in North Oakland."),
     Document(text="SudoRoom's address is at 4799 Shattuck."),
     Document(text="SudoRoom believes in Open-source"),
-    Document(text="SudoRoom has 42 members."),
+    Document(text="SudoRogom has 42 members."),
     Document(text="SudoRoom is in the city of Oakland."),
     Document(text="SudoRoom's BART station is MacArthur BART."),
     Document(text="SudoRoom's robot arm is named Rosa"),
@@ -34,7 +34,7 @@ query_engine = index.as_query_engine()
 response1 = query_engine.query("How many members does SudoRoom have?")
 print(response1)
 
-response2 = query_engine.query("What is SudoRoom's address?")
+response2 = query_engine.query("What is SudoRoom's address?")ß
 print(response2)
 
 response3 = query_engine.query("Which city is SudoRoom located in?")

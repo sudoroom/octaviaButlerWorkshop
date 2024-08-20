@@ -21,7 +21,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_DOCS_DIR = os.path.join(SCRIPT_DIR, "pdfs")
 DEFAULT_INDEX_DIR = os.path.join(SCRIPT_DIR, "pdfs_index")
 EMBED_MODEL = "BAAI/bge-small-en-v1.5"
-DOCUMENT_PDF = "sudoroom_newsletter.pdf"
+DOCUMENT_PDF = "BigRedLaser.pdf"
 # workaround for hugging face fast tokenzier
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
@@ -41,7 +41,7 @@ def main():
     )
     # model_kwargs = {'device': 'cpu'}
     # encode_kwargs = {'normalize_embeddings': False}
-    # embedding = HuggingFaceEmbeddings(
+    # embedding = HuggingFaceEmbeddings(s
     #     model_name=model_name,
     #     model_kwargs=model_kwargs,
     #     encode_kwargs=encode_kwargs
