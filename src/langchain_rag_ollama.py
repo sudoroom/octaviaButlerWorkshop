@@ -39,14 +39,8 @@ def main():
     embedding = HuggingFaceEmbeddings(
         model_name=model_name
     )
-    # model_kwargs = {'device': 'cpu'}
-    # encode_kwargs = {'normalize_embeddings': False}
-    # embedding = HuggingFaceEmbeddings(s
-    #     model_name=model_name,
-    #     model_kwargs=model_kwargs,
-    #     encode_kwargs=encode_kwargs
-    # )
-    # print(f"Embedding: {embedding.model_name}")
+    
+    print(f"Using Embedding: {embedding.model_name}")
 
     # there's a security issue with de-serialization so i'll just
     # delete the previous directory
