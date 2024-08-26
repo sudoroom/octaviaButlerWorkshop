@@ -1,0 +1,7 @@
+ollama
+numpy
+openai
+langchain_experimental
+tiktoken
+langchain_experimental
+faiss-cpu
