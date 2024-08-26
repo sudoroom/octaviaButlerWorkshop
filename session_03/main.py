@@ -16,7 +16,7 @@ character_names = [
     "Aaron Swartz - persecuted entrepreneur and innovator",
     "Cory Doctorow - Writer",
     "Art Critic - Jason",
-    "Hackerspace Director - Jake"
+    "SudoRoom hive mind"
 ]
 topic = "How do we create hackerspace projects in Oakland at SudoRoom that show the true uniqueness of Oakland in a creative way with leftwing ideals and art so that they are not just the standard hackerspace tech products?"
 word_limit = 30
