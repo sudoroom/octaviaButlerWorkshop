@@ -1,7 +1,7 @@
 ollama
 numpy
 openai
-langchain_experimental
+langchain-community
 tiktoken
 langchain_experimental
 faiss-cpu

@@ -1,7 +1,17 @@
+from langchain.schema import (
+    HumanMessage,
+    SystemMessage,
+)
 class DialogueAgent:
-    def __init__(self, name: str, system_message: str) -> None:
+    def __init__(
+        self,
+        name: str,
+        system_message: SystemMessage,
+        model: ChatOpenAI,
+    ) -> None:
         self.name = name
         self.system_message = system_message
+        self.model = model
         self.prefix = f"{self.name}: "
         self.reset()
 
@@ -9,15 +19,21 @@ class DialogueAgent:
         self.message_history = ["Here is the conversation so far."]
 
     def send(self) -> str:
-        # Use Ollama here instead of OpenAI
-        prompt = "\n".join(self.message_history + [self.prefix])
-        response = self.ollama_call(prompt)  # Implement this method
-        return response
+        """
+        Applies the chatmodel to the message history
+        and returns the message string
+        """
+        message = self.model(
+            [
+                self.system_message,
+                HumanMessage(content="\n".join(self.message_history + [self.prefix])),
+            ]
+        )
+        return message.content
 
     def receive(self, name: str, message: str) -> None:
+        """
+        Concatenates {message} spoken by {name} into message history
+        """
         self.message_history.append(f"{name}: {message}")
 
-    def ollama_call(self, prompt: str) -> str:
-        # Implement Ollama API call here
-        # This is a placeholder, you need to implement the actual Ollama API call
-        return "Ollama response placeholder"
