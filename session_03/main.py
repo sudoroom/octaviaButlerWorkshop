@@ -57,8 +57,6 @@ character_system_messages = [
     for character_name, character_headers in zip(character_names, character_headers)
 ]
 
-
-
 for character_name, character_system_message, bidding_template in zip(
     character_names, character_system_messages, character_bidding_templates
 ):
@@ -70,3 +68,7 @@ for character_name, character_system_message, bidding_template in zip(
         bidding_template=bidding_template,
     )
 )
+    
+    # debugging hack in python
+for agent in characters:
+    print(f"\nAll attributes of {agent.name}'s BiddingDialogueAgent:")
