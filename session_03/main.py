@@ -16,14 +16,17 @@ from utils.bid_parser import BidOutputParser, generate_character_bidding_templat
 from simulators.dialogue_simulator import DialogueSimulator, select_next_speaker
 import os
 from dotenv import load_dotenv
+import ollama
+from langchain_ollama.llms import OllamaLLM
+
 
 load_dotenv()
-
 
 os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
 
 ## todo: change the model
-model=ChatOpenAI(temperature=0.4)
+#model=ChatOpenAI(temperature=0.4)
+model = OllamaLLM(model="llama3.1:latest")
 
 # Define your characters, topic, and word limit here
 character_names = [

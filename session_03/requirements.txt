@@ -6,3 +6,4 @@ tiktoken
 langchain_experimental
 faiss-cpu
 tenacity
+langchain-ollama
