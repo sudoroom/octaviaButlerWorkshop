@@ -31,15 +31,21 @@ class DialogueAgent:
         #     ]
         # )
         # return message.content
-
-        messages = [
-            ("system", flatten_content(self.system_message.content)),
-            ("human", "\n".join(self.message_history + [self.prefix]))
-        ]
-        # response = self.model.invoke(prompt)
-      
-        final_message = self.model.invoke(messages)
+        # messages = [
+        #     ("system", flatten_content(self.system_message.content)),
+        #     ("human", "\n".join(self.message_history + [self.prefix]))
+        # ]
+        # # response = self.model.invoke(prompt)
+        # final_message = self.model.invoke(messages)
+        # return final_message
+        system_content_flattened = flatten_content(self.system_message.content)
+        human_content_flattened =  "\n".join(self.message_history + [self.prefix])
+        prompt = f"System: {system_content_flattened}\n\Human: {human_content_flattened}"
+        # print(prompt)
+        final_message = self.model.invoke(prompt)
         return final_message
+        
+                                   
       
 
     def receive(self, name: str, message: str) -> None:
