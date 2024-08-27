@@ -1,6 +1,7 @@
 from typing import List, Callable
-from agents.dialogue_agent import DialogueAgent  # Relative import from the agents package
-
+from utils.bid_parser import ask_for_bid
+from agents.dialogue_agent import DialogueAgent
+import numpy as np
 
 class DialogueSimulator:
     def __init__(
@@ -42,3 +43,23 @@ class DialogueSimulator:
         self._step += 1
 
         return speaker.name, message
+
+def select_next_speaker(step: int, agents: List[DialogueAgent]) -> int:
+    bids = []
+    for agent in agents:
+        bid = ask_for_bid(agent)
+        bids.append(bid)
+
+    # randomly select among multiple agents with the same bid
+    max_value = np.max(bids)
+    max_indices = np.where(bids == max_value)[0]
+    idx = np.random.choice(max_indices)
+
+    print("Bids:")
+    for i, (bid, agent) in enumerate(zip(bids, agents)):
+        print(f"\t{agent.name} bid: {bid}")
+        if i == idx:
+            selected_name = agent.name
+    print(f"Selected: {selected_name}")
+    print("\n")
+    return idx

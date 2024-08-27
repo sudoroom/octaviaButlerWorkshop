@@ -12,8 +12,8 @@ from agents.bidding_dialogue_agent import BiddingDialogueAgent
 from agents.dialogue_agent import DialogueAgent
 from simulators.dialogue_simulator import DialogueSimulator
 from utils.character_generator import generate_character_header, generate_character_system_message, generate_character_description
- 
-
+from utils.bid_parser import BidOutputParser, generate_character_bidding_template, ask_for_bid
+from simulators.dialogue_simulator import DialogueSimulator, select_next_speaker
 import os
 from dotenv import load_dotenv
 
@@ -21,6 +21,9 @@ load_dotenv()
 
 
 os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
+
+## todo: change the model
+model=ChatOpenAI(temperature=0.4)
 
 # Define your characters, topic, and word limit here
 character_names = [
@@ -36,13 +39,6 @@ word_limit = 30
 
 game_description = f"""Here is the topic for the hackerspace topic idea to art critic Jason and hackerspace director Jake: {topic}.
 The participants are: {', '.join(character_names)}."""
-
-print("Testing BiddingDialogueAgent")
-characters = []
-
-## todo: change the model
-model=ChatOpenAI(temperature=0.4)
-
 character_descriptions = [
     generate_character_description(character_name, game_description, word_limit) for character_name in character_names
 ]
@@ -53,8 +49,17 @@ character_headers = [
     )
 ]
 character_system_messages = [
-    generate_character_system_message(character_name, character_headers, topic, word_limit)
+    generate_character_system_message(character_name, character_headers, topic, word_limit, character_names)
     for character_name, character_headers in zip(character_names, character_headers)
+]
+
+
+print("Testing BiddingDialogueAgent")
+characters = []
+
+character_bidding_templates = [
+    generate_character_bidding_template(character_header)
+    for character_header in character_headers
 ]
 
 for character_name, character_system_message, bidding_template in zip(
@@ -68,7 +73,27 @@ for character_name, character_system_message, bidding_template in zip(
         bidding_template=bidding_template,
     )
 )
-    
-    # debugging hack in python
-for agent in characters:
-    print(f"\nAll attributes of {agent.name}'s BiddingDialogueAgent:")
+ 
+# debugging hack in python
+# for agent in characters:
+#     print(f"\nAll attributes of {agent.name}'s BiddingDialogueAgent:")
+#     for key, value in vars(agent).items():
+#         print(f"{key}: {value}")
+
+
+max_iters = 20
+n = 0
+
+simulator = DialogueSimulator(agents=characters, selection_function=select_next_speaker)
+simulator.reset()
+
+first_message = "Octavia, Kara, Aaron and Cory, You can now start pitching your ideas for our hackerspace to Jake and the musuem director"
+simulator.inject("Moderator", first_message )
+print(f"(Moderator): {first_message}")
+print("\n")
+
+while n < max_iters:
+    name, message = simulator.step()
+    print(f"({name}): {message}")
+    print("\n")
+    n += 1

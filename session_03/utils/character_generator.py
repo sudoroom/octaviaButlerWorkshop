@@ -31,7 +31,7 @@ Your topic is: {topic}.
 """
 
 
-def generate_character_system_message(character_name, character_header, topic, word_limit):
+def generate_character_system_message(character_name, character_header, topic, word_limit, character_names):
     return SystemMessage(
         content=(
             f"""{character_header}
