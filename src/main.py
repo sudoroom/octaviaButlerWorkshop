@@ -27,7 +27,7 @@ character_names = [
     "Kara Walker - Artist",
     "Aaron Swartz - persecuted entrepreneur and innovator",
     "Zora Neale Hurston - Writer",
-    "Art Critic - Jason",
+    "Jayson - Food not Bombs organizer",
     "Hackerspace members speaking as one - SudoRoom HiveMind"
 ]
 topic = "How do we create hackerspace projects in Oakland at SudoRoom that show the true uniqueness of Oakland in a creative way with leftwing ideals and art so that they are not just the standard hackerspace tech products?"
