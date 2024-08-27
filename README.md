@@ -8,7 +8,13 @@ In this women and nonbinary workshop we'll be working with open-source AI to sta
 
 * [https://sudoroom.github.io/octaviaButlerAIConversationAgentNight/](https://sudoroom.github.io/octaviaButlerAIConversationAgentNight/)
 
+## AI For Conflict Resolution and Meetings
 
+While we initially mostly as a group had the "ick" for AI in conflict resolution, it's being used in surprisingly helpful ways around the world, often to make discussions more inclusive!
+
+- [Al Jazeera - Can AI Mediate Conflict better than Humans?](https://www.aljazeera.com/news/2024/2/29/can-ai-mediate-conflict-better-than-humans)
+
+> "For generations, power brokers would gather behind doors to make decisions affecting people far and wide. Digital technologies can now allow the process to be relatively more inclusive.
 
 # Session2: Octavia Butler Open Source AI Meetup RAG and Vector Databases 
 
