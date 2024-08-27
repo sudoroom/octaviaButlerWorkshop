@@ -41,12 +41,17 @@ class DialogueAgent:
         system_content_flattened = flatten_content(self.system_message.content)
         human_content_flattened =  "\n".join(self.message_history + [self.prefix])
         prompt = f"System: {system_content_flattened}\n\Human: {human_content_flattened}"
+        messages = [
+        self.system_message,
+        HumanMessage(content="\n".join(self.message_history + [self.prefix]))
+        ]
+        response = self.model.generate([messages])
+        return response.generations[0][0].text
         # print(prompt)
-        final_message = self.model.invoke(prompt)
-        return final_message
+       # final_message = self.model.invoke(prompt)
+       # return final_message
+       
         
-                                   
-      
 
     def receive(self, name: str, message: str) -> None:
         """
@@ -60,7 +65,7 @@ def flatten_content(content):
     elif isinstance(content, list):
         return " ".join(str(item) for item in content)
     else:
-        raise ValueError(f"Unexpected content type: {type(content)}")
+        return str(content)  # Convert any other type to string
     
 class DialogueSimulator:
     def __init__(
