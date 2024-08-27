@@ -95,8 +95,13 @@ simulator.inject("Moderator", first_message )
 print(f"(Moderator): {first_message}")
 print("\n")
 
+final_dialogue = ""
+
 while n < max_iters:
     name, message = simulator.step()
     print(f"({name}): {message}")
     print("\n")
+    final_dialogue += f"({name}): {message}"
+    final_dialogue += "\n"
     n += 1
+

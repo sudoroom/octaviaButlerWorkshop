@@ -23,34 +23,12 @@ class DialogueAgent:
         Applies the chatmodel to the message history
         and returns the message string
         """
-        # chatOpenAI
-        # message = self.model(
-        #     [
-        #         self.system_message,
-        #         HumanMessage(content="\n".join(self.message_history + [self.prefix])),
-        #     ]
-        # )
-        # return message.content
-        # messages = [
-        #     ("system", flatten_content(self.system_message.content)),
-        #     ("human", "\n".join(self.message_history + [self.prefix]))
-        # ]
-        # # response = self.model.invoke(prompt)
-        # final_message = self.model.invoke(messages)
-        # return final_message
-        system_content_flattened = flatten_content(self.system_message.content)
-        human_content_flattened =  "\n".join(self.message_history + [self.prefix])
-        prompt = f"System: {system_content_flattened}\n\Human: {human_content_flattened}"
-        messages = [
-        self.system_message,
-        HumanMessage(content="\n".join(self.message_history + [self.prefix]))
-        ]
-        response = self.model.generate([messages])
-        return response.generations[0][0].text
-        # print(prompt)
-       # final_message = self.model.invoke(prompt)
-       # return final_message
-       
+        prompt = f"{self.system_message.content}\n\n"
+        prompt += "\n".join(self.message_history)
+        prompt += f"\n{self.prefix}"
+        
+        response = self.model.invoke(prompt)
+        return response
         
 
     def receive(self, name: str, message: str) -> None:
