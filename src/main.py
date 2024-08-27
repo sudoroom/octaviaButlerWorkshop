@@ -1,6 +1,6 @@
 from typing import Callable, List
 import tenacity
-from langchain.chat_models import ChatOpenAI
+
 from langchain.output_parsers import RegexParser
 from langchain.prompts import PromptTemplate
 from langchain.schema import (
@@ -19,14 +19,6 @@ from dotenv import load_dotenv
 import ollama
 from langchain_ollama.llms import OllamaLLM
 
-
-load_dotenv()
-
-os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
-
-## todo: change the model
-
-#model=ChatOpenAI(temperature=0.4)
 model = OllamaLLM(model="llama3.1:latest")
 
 # Define your characters, topic, and word limit here
